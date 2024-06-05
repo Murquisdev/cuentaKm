@@ -1,0 +1,31 @@
+@font-face{
+    font-family: "DSEG7";
+    src:url(./fonts/DSEG7Classic-Bold.ttf) format("truetype")
+    /*Si se quieren cargar varias fuentes por si hubiera errores:
+    src:
+        url(./fonts/DSEG7.woff2) format("woff2"),
+        url(./fonts/DSEG7.woff) format("woff"),
+        url(./fonts/DSEG7Classic.ttf) format("trutype");
+        Woff2 ocupa menos que woff
+    */
+}
+body{
+    background: #000;
+}
+.counter{
+    --color: #e00;
+    --dark-color: color-mix(in srgb,var(--color), black 85%);
+
+    font-family: "DSEG7", monospace;
+    font-size: 4rem;
+    color: var(--color);
+    display: flex;
+    position: relative;
+}
+
+.digits::before{
+  content: "888888";
+  color: var(--dark-color);
+  position: absolute;
+  z-index: -1;
+}
